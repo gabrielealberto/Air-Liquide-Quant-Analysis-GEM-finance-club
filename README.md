@@ -1,50 +1,61 @@
 # Air Liquide Quantitative Analysis
 
-## Overview
-This repository provides a comprehensive quantitative analysis of Air Liquide (AI.PA) compared to the CAC 40 index. The study covers historical performance, risk metrics, probability of positive returns, and key financial indicators using data from 2010 to 2024.
+Quantitative equity analysis of Air Liquide (`AI.PA`) relative to the CAC 40 index, developed for the GEM Finance Society.
 
-## Company Background
-Air Liquide is a French multinational company providing industrial gases and services to industries such as healthcare, chemicals, and electronics. Founded in 1902, it is a prominent component of the CAC 40 index.
+The project studies historical performance, volatility, drawdowns, tail risk and simulation-based return scenarios using market data from 2010 to 2024.
+
+## Overview
+
+Air Liquide is a French multinational company providing industrial gases and services to sectors such as healthcare, chemicals and electronics. It is a major component of the CAC 40 index.
+
+The analysis compares Air Liquide with the CAC 40 to support an investment discussion based on risk-adjusted performance and downside-risk metrics.
 
 ## Analysis Components
 
-### 1. Data Collection & Preparation
-- Historical price data retrieved using Yahoo Finance API (`yfinance`)
-- Timeframe: January 1, 2010 – December 31, 2024
-- Compared Air Liquide (AI.PA) with CAC 40 (^FCHI)
-- Data cleaning and alignment by removing missing values
+### Data Collection and Preparation
 
-### 2. Performance Visualization
-- Cumulative performance charts normalized to base 100
-- Comparative performance of Air Liquide vs CAC 40
-- Volatility and returns visualizations
+- Historical price data retrieved with `yfinance`
+- Time frame: January 2010 to December 2024
+- Comparison between Air Liquide (`AI.PA`) and CAC 40 (`^FCHI`)
+- Data cleaning and alignment of market time series
 
-### 3. Statistical Analysis
-Key financial metrics calculated:
-- **Geometric Mean Returns** (annualized)
-- **Volatility** (annualized standard deviation of returns)
-- **Sharpe Ratio** (risk-adjusted returns, risk-free rate = 0)
-- **Correlation Matrix** (Air Liquide vs CAC 40 returns)
+### Performance Analysis
 
-### 4. Probability & Monte Carlo Simulation
-- Monte Carlo simulations: 10,000 paths using historical return distribution
-- Statistical probability estimates assuming normal distribution
-- Time horizons: 1, 5, 10, 15 years
-- Visualizations of simulated end-period returns
+- Cumulative performance indexed to base 100
+- Comparative performance versus the CAC 40
+- Return and volatility visualization
 
-### 5. Risk Assessment
-- **Maximum Drawdown (MDD)**
-- **Value at Risk (VaR)** at 95% confidence
-- **Conditional VaR (CVaR)**
-- **Drawdown Exceedance Probability** (probability of exceeding 20% drawdown)
+### Statistical Metrics
 
-## 🛠️ Technical Implementation
+- Annualized geometric mean return
+- Annualized volatility
+- Sharpe ratio, with a zero risk-free rate assumption
+- Correlation between Air Liquide and CAC 40 returns
 
-### Libraries Used
-```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-import yfinance as yf
-import pandas as pd
-import numpy as np
-from scipy.stats import norm
+### Monte Carlo Simulation
+
+- 10,000 simulated return paths
+- Simulation based on the historical return distribution
+- Investment horizons of 1, 5, 10 and 15 years
+- Visualization of simulated terminal returns
+
+### Risk Assessment
+
+- Maximum drawdown
+- Value at Risk (VaR) at 95% confidence
+- Conditional Value at Risk (CVaR)
+- Probability of exceeding a 20% drawdown
+
+## Tech Stack
+
+- Python
+- pandas
+- NumPy
+- SciPy
+- Matplotlib
+- Seaborn
+- yfinance
+
+## Scope
+
+This project is an educational equity-analysis notebook. It is intended to support a structured investment discussion, not to provide investment advice or a production-grade valuation model.
